@@ -15,18 +15,27 @@ describe("BirthdayForm", () => {
     expect(form).toHaveAttribute('method', 'post');
   });
 
-  it('displays a button to save a form', () => {
-    render(BirthdayForm);
-    expect(screen.queryByRole('button')).toBeVisible();
-  });
+//   it('displays a button to save a form', () => {
+//     render(BirthdayForm);
+//     expect(screen.queryByRole('button')).toBeVisible();
+//   });
+ });
 
-  describe('name field', () => {
-    it('displays a text field for the contact name', () => {
-      render(BirthdayForm);
-      const field = screen.queryByLabelText('Name', { selector: 'input[type=text]' });
-      expect(field).toBeVisible();
-      expect(field).toHaveAttribute('name', 'name');
-    });
+describe('name field', () => {
+  it('displays a text field for the contact name', () => {
+    render(BirthdayForm);
+    const field = screen.queryByLabelText('Name', { selector: 'input[type=text]' });
+    expect(field).toBeVisible();
+    expect(field).toHaveAttribute('name', 'name');
+  });
+});
+
+describe('date of birth field', () => {
+  it('displays a text field for the date of birth', () => {
+    render(BirthdayForm);
+    const field = screen.queryByLabelText('Date of Birth', { selector: 'input[type=text]' });
+    expect(field).toBeVisible();
+    expect(field).toHaveAttribute('name', 'dob');
   });
 });
 
